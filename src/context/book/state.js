@@ -1,5 +1,5 @@
 // TODO: Load/parse 'favoriteBooks' from localStorage
-const favoriteBooks = localStorage.getItem('favoriteBooks')
+const favoriteBooks = JSON.parse(localStorage.getItem('favoriteBooks'))
 
 // TODO: Export initial state object as default
 // initial state should have keys bookSearchResults and favoriteBooks
