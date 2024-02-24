@@ -5,7 +5,6 @@ import {
   SEARCH_BOOKS
 } from './actions'
 
-
 export default function reducer(prevState, { action, payload }) {
   const { bookSearchResults, favoriteBooks } = prevState
   switch(action) {
@@ -14,15 +13,16 @@ export default function reducer(prevState, { action, payload }) {
     case REMOVE_BOOK:
       return {...prevState, favoriteBooks: favoriteBooks.filter(book => book.id !== payload) }
     case SEARCH_BOOKS:
-      return {...prevState, input: bookSearchResults}
+      return {...prevState, bookSearchResults: payload}
     default:
       return prevState
   }
 
-
 }
 
 // This helper function stores the favoriteBook state in localStorage as a string
-function saveToLocalStorage(favBooks) {
+
+export function saveToLocalStorage(favBooks) {
   localStorage.setItem('favoriteBooks', JSON.stringify(favBooks))
 }
+
