@@ -12,9 +12,9 @@ export default function reducer(prevState, { action, payload }) {
     case ADD_BOOK:
       return {...prevState, favoriteBooks: [...favoriteBooks, payload]}
     case REMOVE_BOOK:
-      return {...prevState, favoriteBooks: favoriteBooks.filter(book => book !== payload)}
+      return {...prevState, favoriteBooks: favoriteBooks.filter(book => book.id !== payload) }
     case SEARCH_BOOKS:
-      return {...prevState, input: payload}
+      return {...prevState, input: bookSearchResults}
     default:
       return prevState
   }

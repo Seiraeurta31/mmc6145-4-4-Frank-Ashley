@@ -25,11 +25,11 @@ export default function Book() {
         {
           isFavoriteBook
           // TODO: add onClick function that calls dispatch to remove a book
-          ? <button onClick = {() => dispatch ({action: REMOVE_BOOK, payload: book})}>
+          ? <button onClick = {() => dispatch ({action: REMOVE_BOOK, payload: bookId})}>
               Remove from Favorites
             </button>
           // TODO: add onClick function that calls dispatch to add a book
-          : <button onClick = {() => dispatch ({action: ADD_BOOK, payload: book})}>
+          : <button onClick = {() => dispatch ({action: ADD_BOOK, payload: bookId})}>
               Add to Favorites
             </button>
         }
