@@ -1,5 +1,26 @@
 // TODO: import actions and implement reducer for each action
-export default function reducer() {}
+import {
+  ADD_BOOK,
+  REMOVE_BOOK,
+  SEARCH_BOOKS
+} from './actions'
+
+
+export default function reducer(prevState, { action, payload }) {
+  const { bookSearchResults, favoriteBooks } = prevState
+  switch(action) {
+    case ADD_BOOK:
+      return {...prevState, favoriteBooks: [...favoriteBooks, payload]}
+    case REMOVE_BOOK:
+      return {...prevState, favoriteBooks: favoriteBooks.filter(book => book !== payload)}
+    case SEARCH_BOOKS:
+      return {...prevState, input: payload}
+    default:
+      return prevState
+  }
+
+
+}
 
 // This helper function stores the favoriteBook state in localStorage as a string
 function saveToLocalStorage(favBooks) {
