@@ -29,7 +29,7 @@ export default function Book() {
               Remove from Favorites
             </button>
           // TODO: add onClick function that calls dispatch to add a book
-          : <button onClick = {() => dispatch ({action: ADD_BOOK, payload: bookId})}>
+          : <button onClick = {() => dispatch ({action: ADD_BOOK, payload: book})}>
               Add to Favorites
             </button>
         }
